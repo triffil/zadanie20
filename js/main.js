@@ -21,8 +21,17 @@ function formInputUserHandler(e) {
     inputCityValue
   );
   sendRequest(bodyRequest, (response) => {
-    const responseArr = [response];
-    renderAndCreateUsers(responseArr);
+    if (response) {
+      usersContainer.textContent = "";
+      getUsers((rsp) => {
+        renderAndCreateUsers(rsp);
+        usersEventHandler(rsp);
+      });
+    }
+    // const responseArr = [response];
+    // createUsers(response);
+    // usersEventHandler(responseArr);
+    // getUsers;
     // console.log(responseArr);
     // renderInformationUser(responseArr, response.id);
     // console.log();
@@ -107,6 +116,15 @@ function createUserInfo(user) {
   listForUserInfo.appendChild(email);
   listForUserInfo.appendChild(city);
   infoContainer.appendChild(listForUserInfo);
+}
+
+function createUsers(response) {
+  const list = document.querySelector(".list-of-users");
+  const listItem = document.createElement("li");
+  listItem.dataset.id = response.id;
+  listItem.classList.add("list-group-item");
+  listItem.textContent = response.name;
+  list.insertAdjacentElement("afterbegin", listItem);
 }
 
 function renderAndCreateUsers(response) {
