@@ -1,0 +1,36 @@
+p {
+  text-align: center;
+  font-weight: 400;
+}
+
+.container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  /* justify-content: center; */
+}
+.user-input {
+  max-width: 40%;
+  margin-right: 50px;
+  margin-top: 10px;
+}
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.users-list {
+  max-width: 30%;
+  cursor: pointer;
+}
+
+.users-info {
+  margin-left: 50px;
+  width: 30%;
+}
+.users-list .list-group-item:hover {
+  background-color: orange;
+}
+
+.is-pressed {
+  font-weight: bold;
+}
