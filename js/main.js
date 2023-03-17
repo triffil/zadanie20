@@ -21,20 +21,9 @@ function formInputUserHandler(e) {
     inputCityValue
   );
   sendRequest(bodyRequest, (response) => {
-    if (response) {
-      usersContainer.textContent = "";
-      getUsers((rsp) => {
-        renderAndCreateUsers(rsp);
-        usersEventHandler(rsp);
-      });
-    }
-    // const responseArr = [response];
-    // createUsers(response);
-    // usersEventHandler(responseArr);
-    // getUsers;
-    // console.log(responseArr);
-    // renderInformationUser(responseArr, response.id);
-    // console.log();
+    const responseArr = [response];
+    createUsers(response);
+    usersEventHandler(responseArr);
   });
 }
 
