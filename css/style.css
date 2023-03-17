@@ -1,0 +1,29 @@
+p {
+  text-align: center;
+  font-weight: 400;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.users-list {
+  max-width: 30%;
+  cursor: pointer;
+}
+
+.users-info {
+  margin-left: 50px;
+}
+.users-list .list-group-item:hover {
+  background-color: orange;
+}
+
+.is-pressed {
+  font-weight: bold;
+}
